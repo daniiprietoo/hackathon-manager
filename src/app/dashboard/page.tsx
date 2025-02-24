@@ -18,6 +18,15 @@ const hackathons = [
   {
     id: 2,
     title: "Web3 Hackathon",
+    date: "March 15-17, 2024",
+    status: "current",
+    participants: 20,
+    theme: "Artificial Intelligence",
+    description: "Create innovative AI solutions for real-world problems",
+  },
+  {
+    id: 2,
+    title: "Web3 Hackathon",
     date: "April 5-7, 2024",
     status: "upcoming",
     participants: 80,
@@ -199,7 +208,7 @@ export default function Dashboard() {
                           <span className="text-sm font-medium text-gray-400 capitalize">{hackathon.status}</span>
                         </div>
                         <h3 className="text-lg font-semibold text-gray-100 mb-1">{hackathon.title}</h3>
-                        <p className="text-sm text-gray-400 mb-4">{hackathon.description}</p>
+                        <p className="text-sm text-gray-400 mb-4 text-wrap">{hackathon.description}</p>
                       </div>
                       <ChevronRight className="h-5 w-5 text-gray-500" />
                     </div>
