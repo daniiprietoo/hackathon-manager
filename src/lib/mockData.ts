@@ -1,0 +1,38 @@
+const hackathonsList = [
+  {
+    id: 1,
+    title: "AI Innovation Challenge",
+    date: "March 15-17, 2024",
+    status: "current",
+    participants: 120,
+    theme: "Artificial Intelligence",
+    description: "Create innovative AI solutions for real-world problems",
+  },
+  {
+    id: 2,
+    title: "Web3 Hackathon",
+    date: "March 15-17, 2024",
+    status: "current",
+    participants: 20,
+    theme: "Artificial Intelligence",
+    description: "Create innovative AI solutions for real-world problems",
+  },
+  {
+    id: 2,
+    title: "Web3 Hackathon",
+    date: "April 5-7, 2024",
+    status: "upcoming",
+    participants: 80,
+    theme: "Blockchain",
+    description: "Building the future of decentralized applications",
+  },
+  {
+    id: 3,
+    title: "Green Tech Challenge",
+    date: "February 1-3, 2024",
+    status: "past",
+    participants: 150,
+    theme: "Sustainability",
+    description: "Developing sustainable technology solutions",
+  },
+];

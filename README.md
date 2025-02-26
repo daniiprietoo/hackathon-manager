@@ -6,11 +6,6 @@
 - [ ] Protect routes
 
 ## TODO DATABASE
-- [ ] Cofigure Drzzle
-- [ ] Connect to Singlestore
-- [ ] DB Schema
-- [ ] DB Migration
-- [ ] DB Seeding
 - [ ] CRUD Operations
 
 ## TODO Features
@@ -36,6 +31,15 @@
 - [x] UI for Landing Page
 - [x] UI for Dashboard
 - [x] Deploy to Netlify
+- [x] Cofigure Drzzle
+- [x] Connect to Singlestore
+- [x] DB Schema
+- [x] DB Migration
+- [x] DB Seeding
+
+## Done 2-25-2025
+- seeding
+- started with implementing queries in the UI
 
 ## 📚 Resources
 - [Clerk Documentation](https://clerk.dev/docs)

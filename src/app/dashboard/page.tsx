@@ -3,6 +3,8 @@
 import { useState } from "react"
 import { Search, Filter, Calendar, Trophy, Clock, History, ChevronRight, User, ChevronLeft } from "lucide-react"
 import Link from "next/link"
+import { hackathonSeed } from "@/server/db/seeding"
+import { QUERIES } from "@/server/db/queries"
 
 // Mock data for demonstration
 const hackathons = [
@@ -50,7 +52,7 @@ const userHackathons = {
   registered: [{ id: 2, title: "Web3 Hackathon", date: "April 5-7, 2024" }],
 }
 
-export default function Dashboard() {
+export default async function Dashboard() {
   const [searchQuery, setSearchQuery] = useState("")
   const [activeTab, setActiveTab] = useState("current")
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
