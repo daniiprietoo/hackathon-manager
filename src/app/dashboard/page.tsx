@@ -52,7 +52,7 @@ const userHackathons = {
   registered: [{ id: 2, title: "Web3 Hackathon", date: "April 5-7, 2024" }],
 }
 
-export default async function Dashboard() {
+export default function Dashboard() {
   const [searchQuery, setSearchQuery] = useState("")
   const [activeTab, setActiveTab] = useState("current")
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
