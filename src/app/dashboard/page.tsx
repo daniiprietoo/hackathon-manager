@@ -27,19 +27,6 @@ export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("current");
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
-  const getStatusIcon = (status: string) => {
-    switch (status) {
-      case "current":
-        return <Trophy className="h-5 w-5 text-green-400" />;
-      case "upcoming":
-        return <Clock className="h-5 w-5 text-blue-400" />;
-      case "past":
-        return <History className="h-5 w-5 text-gray-400" />;
-      default:
-        return null;
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
       {/* Sidebar */}

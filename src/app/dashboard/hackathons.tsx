@@ -17,6 +17,9 @@ export default function Hackathons(props: {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+
+    void loadHackathons();
+    
     async function loadHackathons() {
       try {
         const data = await getHackathons();
@@ -27,8 +30,6 @@ export default function Hackathons(props: {
         setLoading(false);
       }
     }
-    
-    loadHackathons();
   }, []);
 
   const getStatus = (submissionDeadline: Date | null): string => {
@@ -61,6 +62,14 @@ export default function Hackathons(props: {
       return <History className="h-5 w-5 text-gray-400" />;
     }
   };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-12">
+        <p className="text-gray-400">Loading hackathons...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-6xl">
