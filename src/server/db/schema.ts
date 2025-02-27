@@ -5,13 +5,15 @@ import {
   singlestoreTableCreator,
   datetime,
   timestamp,
+  SingleStoreTableFn,
+  SingleStoreTableWithColumns,
 } from "drizzle-orm/singlestore-core";
 
 const createTable = singlestoreTableCreator(
   (tableName) => `hackaton_manager_${tableName}`,
 );
 
-export const users = createTable(
+export const users_table = createTable(
   "users",
   {
     id: bigint("id", { mode: "number" }).primaryKey().autoincrement(),
@@ -35,7 +37,9 @@ export const users = createTable(
   },
 );
 
-export const hackathons = createTable("hackathons", {
+export type DB_UserType = typeof users_table.$inferSelect;
+
+export const hackathons_table = createTable("hackathons", {
   id: bigint("id", { mode: "number" }).primaryKey().autoincrement(),
   title: text("title").notNull(),
   description: text("description").notNull(),
@@ -45,6 +49,7 @@ export const hackathons = createTable("hackathons", {
   startDate: datetime("start_date").notNull(),
   endDate: datetime("end_date").notNull(),
   submissionDeadline: datetime("submission_deadline"),
+  participants: bigint("participants", { mode: "number" }).default(0),
   createdBy: bigint("created_by", { mode: "number" }).notNull(),
   createdAt: timestamp("created_at", { mode: "string" }).defaultNow().notNull(),
   updatedAt: timestamp("updated_at", { mode: "string" })
@@ -61,7 +66,9 @@ export const hackathons = createTable("hackathons", {
   ];
 });
 
-export const submissions = createTable(
+export type DB_HackathonType = typeof hackathons_table.$inferSelect;
+
+export const submissions_table = createTable(
   "submissions",
   {
     id: bigint("id", { mode: "number" }).primaryKey().autoincrement(),
@@ -82,4 +89,6 @@ export const submissions = createTable(
     ];
   }
 );
+
+export type DB_SubmissionType = typeof submissions_table.$inferSelect;
 

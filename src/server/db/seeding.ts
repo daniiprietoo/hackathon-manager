@@ -1,10 +1,10 @@
 "use server"
 
 import { db } from "@/server/db/index";
-import { hackathons } from "@/server/db/schema";
+import { hackathons_table } from "@/server/db/schema";
 
 export async function hackathonSeed() {
-  await db.insert(hackathons).values([
+  await db.insert(hackathons_table).values([
     {
       id: 1,
       title: "AI Innovation Challenge",
