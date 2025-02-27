@@ -6,7 +6,6 @@ import {
   Filter,
   Trophy,
   Clock,
-  History,
   ChevronRight,
   User,
   ChevronLeft,
