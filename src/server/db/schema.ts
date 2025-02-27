@@ -5,8 +5,6 @@ import {
   singlestoreTableCreator,
   datetime,
   timestamp,
-  SingleStoreTableFn,
-  SingleStoreTableWithColumns,
 } from "drizzle-orm/singlestore-core";
 
 const createTable = singlestoreTableCreator(

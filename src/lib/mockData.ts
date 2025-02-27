@@ -1,4 +1,4 @@
-const hackathonsList = [
+export const hackathonsList = [
   {
     id: 1,
     title: "AI Innovation Challenge",

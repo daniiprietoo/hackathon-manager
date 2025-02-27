@@ -4,6 +4,7 @@ import { Clock, Trophy, History, ChevronRight, Calendar } from "lucide-react";
 import Link from "next/link";
 import { getHackathons } from "@/server/db/server-actions";
 import { useEffect, useState } from "react";
+import type { DB_HackathonType } from "@/server/db/schema";
 
 
 export default function Hackathons(props: {
@@ -12,14 +13,14 @@ export default function Hackathons(props: {
 }) {
   const { searchQuery, activeTab } = props;
 
-  const [hackathons, setHackathons] = useState<any[]>([]);
+  const [hackathons, setHackathons] = useState<DB_HackathonType[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadHackathons() {
       try {
         const data = await getHackathons();
-        setHackathons(data || []);
+        setHackathons(data);
       } catch (error) {
         console.error("Failed to load hackathons:", error);
       } finally {
